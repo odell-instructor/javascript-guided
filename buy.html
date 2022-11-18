@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>ACME Bicycle Buy</title>
+</head>
+<body>
+    <!-- Head Section -->
+    <div class="header">
+        <h1>ACME Bicycles</h1>
+        <ul class="nav">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="road.html">ROAD</a></li>
+            <li><a href="mountain.html">MOUNTAIN</a></li>
+            <li><a href="#" id="active">BUY</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+
+    <!-- Buy information -->
+    <div class="outer-section">
+
+        <!-- Left side-->
+        <div class="buy-lt">
+            <img id="bike" src="images/crosscountry.png" alt="cross country">
+            <form class="ship-info">
+                <input class="ct-input" type="text" id="name"><br>
+                <label class="contact-label" for="name">Name</label><br>
+                <input class="ct-input" type="text" id="address"><br>
+                <label class="contact-label" for="address">Address</label><br>
+                <input class="ct-input" type="text" id="city"><br>
+                <label class="contact-label" for="city">City</label><br>
+
+                <div class="ship">
+                    <div class="ship-lt">
+                        <input class="ct-input" type="text" id="state"><br>
+                        <label class="contact-label" for="state">State</label>
+                    </div>
+                    <div class="ship-rt">
+                        <input class="ct-input" type="text" id="zip"><br>
+                        <label class="contact-label" for="zip">Zipcode</label>
+                    </div>
+                </div>
+
+                <input class="ct-input" type="text" id="phone"><br>
+                <label class="contact-label" for="phone">Phone</label>
+            </form>
+        </div>
+
+        <!-- Right side-->
+        <div class="buy-rt">
+            <form class="order-shell">
+                <!-- Choose bike -->
+                <section class="bike-choice">
+                    <select name="bike" id="bike-style" onchange="changeImage()">
+                        <option disabled selected value>-- Select Your Bike Style --</option>
+                        <option value="crosscountry">Cross Country</option>
+                        <option value="downhill">Down Hill</option>
+                        <option value="touring">Touring</option>
+                        <option value="vintage">Vintage</option>
+                    </select> <br>
+                    <label class="order-label" for="bike-style">Bike Style</label>
+                </section>
+
+                <!-- Choose Bike Frame Color -->
+                <section class="bike-color" id="bike-section">
+                    <select name="bike-color" id="bike-color-style">
+                        <option disabled selected value>-- Select your Bike Frame Color --</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                        <option value="chrome">Chrome</option>
+                        <option value="black">Black</option>
+                        <option value="gold">Gold (additonal cost)</option>
+                    </select> <br>
+                    <label class="order-label" for="bike-color-style">Bike Frame Color</label>
+                </section>
+
+                <!-- Custom option 1 -->
+
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="flex-footer">
+        <p class="footer-address">ACME Bicycles Co. 1234 Main St. Somewhere, MO 11111</p>
+        <div class="footer-center">
+            <ul class="nav-footer">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="road.html">ROAD</a></li>
+                <li><a href="mountain.html">MOUNTAIN</a></li>
+                <li><a href="#">BUY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+
+        <div class="social-box">
+            <a href="https://unsplash.com/explore" target="_blank">Images by Unsplashed</a>
+            <ul class="nav-social">
+                <li><a href="#"><img class="social-icon" src="images/facebook.png" alt="facebook"></a></li>
+                <li><a href="#"><img class="social-icon" src="images/twitter.png" alt="twitter"></a></li>
+                <li><a href="#"><img class="social-icon" src="images/instagram.png" alt="instagram"></a></li>
+                <li><a href="#"><img class="social-icon" src="images/linkedin.png" alt="linkedin"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="scripts/buy.js"></script>
+
+</body>
+</html>
