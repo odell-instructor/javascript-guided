@@ -276,7 +276,7 @@ h1 {
     margin-left: 12px;
 }
 
-input {
+.ct-input {
     width: 100%;
 }
 
@@ -372,3 +372,47 @@ select {
     width: 100%;
     text-align: center;
 }
+
+#btn-purchase {
+    background-color: #31881B;
+    border-color: #31881B;
+    border-radius: 15px;
+    font-size: 21px;
+    color: white;
+    width: 170px;
+    height: 60px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    float: right;
+}
+
+.custom-label {
+    font-size: 19px;
+    margin-top: 32px;
+}
+
+.order-show {
+    margin-top: 32px;
+    background-color: #B3B3BC;
+    display: flex;
+    width: 100%;
+}
+
+.receipt-lt {
+    flex-grow: 3;
+    margin-left: 12px;
+}
+
+.receipt-rt {
+    margin-right: 12px;
+}
+
+.amount {
+    text-align: right;
+}
+.rec-rt {
+    text-align: right;
+    margin-right: 16px;
+}
+
+
