@@ -67,7 +67,7 @@
 
                 <!-- Choose Bike Frame Color -->
                 <section class="bike-color" id="bike-section">
-                    <select name="bike-color" id="bike-color-style" onchange="">
+                    <select name="bike-color" id="bike-color-style" onchange="updateOrder()">
                         <option disabled selected value>-- Select your Bike Frame Color --</option>
                         <option value="Blue">Blue</option>
                         <option value="Green">Green</option>
@@ -83,19 +83,19 @@
                 <p class="custom-label" id="custom-label">We offer the following Custom Options. Check all that apply.</p>
                 <div class="custom-options" id="custom-options">                    
                     <section class="co-items">                        
-                        <input type="checkbox" id="wt-tires" value="White Tires" onchange="">
+                        <input type="checkbox" id="wt-tires" value="White Tires" onchange="customTires()">
                         <label class="order-label" for="wt-tires">White Tires</label><br>     
 
-                        <input type="checkbox" id="wt-grips" value="Leather Grips" onchange="">
+                        <input type="checkbox" id="wt-grips" value="Leather Grips" onchange="customGrips()">
                         <label class="order-label" for="wt-grips">Leather Grips</label><br>
                         
-                        <input type="checkbox" id="wt-seat" value="Leather Seat" onchange="">
+                        <input type="checkbox" id="wt-seat" value="Leather Seat" onchange="customSeat()">
                         <label class="order-label" for="wt-seat">Leather Seat</label>
                     </section>         
                 </div>
             </form>
 
-            <button id="btn-purchase" onclick="">Purchase</button>
+            <button id="btn-purchase" onclick="reserveOrder()">Purchase</button>
             <div class="order-show" id="order-show">
                 <div class="receipt-lt">
                     <p class="rec-lt" id="rec-bike"></p>

@@ -92,3 +92,94 @@ function addOrder(bike) {
 
     calculateSub();    
 }
+
+function calculateSub() {
+    document.getElementById('rec-subtotal').innerHTML = '$'+total;
+    calculateTax();
+    calculateTotal();
+}
+
+function calculateTax() {
+    tax_amount = (total * tax).toFixed(2);
+    document.getElementById('rec-tax').innerHTML = '$'+tax_amount;
+}
+
+function calculateTotal() {
+    let finished = total + Number.parseFloat(tax_amount);
+    document.getElementById('rec-total').innerHTML = '$'+finished.toFixed(2);
+}
+
+function updateOrder() {
+    let bike = document.getElementById('bike-style').value;
+    let color = document.getElementById('bike-color-style').value;
+    switch(bike) {
+        case 'crosscountry':
+            cross_country['frame_color'] = color;
+            addOrder(cross_country);
+        break;
+        case 'downhill':
+            downhill['frame_color'] = color;
+            addOrder(downhill);
+        break;
+        case 'touring':
+            touring['frame_color'] = color;
+            addOrder(touring);
+        break;
+        case 'vintage':
+            vintage['frame_color'] = color;
+            addOrder(vintage);
+        break;
+    }
+    displayElement(purchase, 'inline');
+}
+
+function customTires() {
+    let tire = document.querySelector('#wt-tires');   
+    
+    if(tire.checked) {
+        document.getElementById('rec-tires').innerHTML = tire.value;
+        document.getElementById('rec-tires-price').innerHTML = custom.white_tires;
+        total += custom.white_tires;
+    } else {
+        document.getElementById('rec-tires').innerHTML = '';
+        document.getElementById('rec-tires-price').innerHTML = '';
+        total -= custom.white_tires;
+    }
+    calculateSub();
+}
+
+function customGrips() {
+    let grips = document.querySelector('#wt-grips');
+    if(grips.checked) {
+        document.getElementById('rec-grips').innerHTML = grips.value;
+        document.getElementById('rec-grips-price').innerHTML = custom.leather_grips;
+        total += custom.leather_grips;
+    } else {
+        document.getElementById('rec-grips').innerHTML = '';
+        document.getElementById('rec-grips-price').innerHTML = '';
+        total -= custom.leather_grips;
+    }
+    calculateSub();
+}
+
+function customSeat() {
+    let seat = document.querySelector('#wt-seat');
+    if(seat.checked) {
+        document.getElementById('rec-seat').innerHTML = seat.value;
+        document.getElementById('rec-seat-price').innerHTML = custom.leather_seat;
+        total += custom.leather_seat;
+    } else {
+        document.getElementById('rec-seat').innerHTML = '';
+        document.getElementById('rec-seat-price').innerHTML = '';
+        total -= custom.leather_seat;
+    }
+    calculateSub();
+}
+
+function reserveOrder() {
+    let step1 = 'All tires will be aired up and set to correct psi.';
+    let step2 = 'We will have your bike assembled and test ridden.';
+    let step3 = 'The frame will be washed after the test ride.';
+    alert('Your bike is been reserved. We will notify you when it is ready to be picked up.\n'+
+    step1 + '\n' + step2 + '\n' + step3);
+}
